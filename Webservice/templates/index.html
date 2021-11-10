@@ -1,0 +1,47 @@
+﻿<html>
+
+<head>
+    <title>Ultrasound skin image model prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<center>
+<h1>Ultrasound image skin disease prediction</h1>
+<div style = 'line-height:400%'>
+<div class="agile-its">
+    <h2>DL Web Service for study</h2>
+    <h2>Lab of AI in biomedical imaging @Yonsei University</h2>
+    <div class="w3layouts">
+     <div style = 'line-height:300%'>
+        <div class="photos-upload-view">
+        
+            <form id="upload" action="/predict" method="POST" enctype="multipart/form-data">
+                <div class="upload-btn-wrapper">
+                    <button class="btn">Diagnosis</button>
+                    <input type="file" value="Upload" name="image">
+                </div>
+                <input type="submit" value="Prediction result">
+                {% if label %}
+                    <span class="result_lable">
+	      <span style = "color : red;"> 
+                    <strong>
+                        {{ label }}
+                    </strong>
+                    </span>
+                {% endif %}
+                <P><strong>Input and CAM Image</strong></P>
+	  <div style="width:50%";margin:30 auto;">	
+                <a href="#"><img src="{{ url_for('static', filename=image_file) }}" width="400" height="400"/></a>
+	  <a href="#"><img src="{{ url_for('static', filename=cam_file) }}" width ="400" height="400"/></a>
+	  </div>
+            </form>
+        </div>
+    </div>
+   </center>
+</div>
+</body>
+
+</html>
