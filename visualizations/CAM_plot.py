@@ -92,4 +92,4 @@ for inputs, labels in val_data_loader:
     plt.axis('off')
     plt.title('label : {} / prediction : {}'.format(labels.item(), pred_id))
     plt.show()
-    
+    break
