@@ -2,7 +2,7 @@
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
-from weight_inits import init_weights
+from utils.weight_inits import init_weights
 ##
 class _GridAttentionBlockND(nn.Module):
     def __init__(self, in_channels, gating_channels, inter_channels=None, dimension=2,

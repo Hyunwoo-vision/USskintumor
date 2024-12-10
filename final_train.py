@@ -15,7 +15,7 @@ import numpy as np
 import cv2
 import copy
 
-from transforms import *
+from utils.transforms import *
 
 # model
 from model.combined_CNN import conv3x3, combined_cnn, _combined_model

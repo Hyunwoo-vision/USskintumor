@@ -9,7 +9,7 @@ import copy
 import time
 import random
 
-from transforms import * #autment methods
+from utils.transforms import * #autment methods
 
 # hyperopt for bayesian optimization
 from hyperopt import fmin, tpe, hp, STATUS_OK, Trials

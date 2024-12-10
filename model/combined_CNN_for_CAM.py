@@ -12,38 +12,7 @@ def conv3x3(in_planes, out_planes, stride=1, groups=1, dilation=1):
     return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,
                      padding=dilation, groups=groups, bias=False, dilation=dilation)
 
-# not using in this project
-# class BasicBlock(nn.Module):  # basic residual block
-#     expansion = 1 #해당 resiudal block을 몇번 반복할 것인지
-#     __constants__ = ['downsample'] # keeping eye on this variable and not change type or shape
-#     def __init__(self, inplanes,planes,stride, downsample=None,
-#                  base_width=64, dilation=1, norm_layer=None):
-#         super(BasicBlock, self).__init__()
-#         if norm_layer is None:
-#             norm_layer = nn.BatchNorm2d
-#         self.conv1 = conv3x3(inplanes, planes, stride)
-#         self.bn1 = norm_layer(planes)
-#         self.relu = nn.ReLU(inplace=True)
-#         self.conv2 = conv3x3(planes, planes, stride)
-#         self.bn2 = norm_layer(planes)
-#         self.downsample = downsample
-#         self.stride = stride
-#
-#     def forward(self, x):
-#         id = x
-#         f = self.conv1(x)
-#         f = self.bn1(f)
-#         f = self.relu(f)
-#         f = self.conv1(f)
-#         f = self.bn1(f)
-#
-#         if self.downsample is not None:
-#             id = self.downsample(x)
-#         f += id
-#         f = self.relu(f)
-#
-#         return f
-##
+
 class combined_cnn(nn.Module): # design combined resnet (resnet + attention structure)
 
     def __init__(self, transfer_learning = True, num_classes=3,
