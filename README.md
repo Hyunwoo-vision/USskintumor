@@ -81,6 +81,6 @@ The model achieved the following performance metrics across three tumor types:
 
 ## License
 
-This project is licensed under the terms of the **Creative Commons Attribution (CC BY)** license. See the `LICENSE` file for details.
+This project is licensed under the terms of the **Creative Commons Attribution (CC BY)** license.
 
 ---
