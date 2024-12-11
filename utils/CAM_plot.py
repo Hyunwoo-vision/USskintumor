@@ -13,15 +13,10 @@ from torchvision import datasets, models
 from torchsummary import summary
 
 from loss_functions.focal_loss import *
-import matplotlib.pyplot as plt
-from matplotlib import lines
-import numpy
+import matplotlib.pyplot as plㅅ
 import cv2
-import copy
-import math
-import random
 
-from model.combined_CNN_for_CAM import conv3x3, combined_cnn, _combined_model
+from model.combined_CNN_for_CAM import _combined_model
 
 ## CUDA
 if torch.cuda.is_available() == True:

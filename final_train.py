@@ -139,7 +139,7 @@ batch_size = 16
 date = '211109'
 # define model
 def combined_net(**kwargs):
-    return _combined_model(transfer_learning=True, num_classes = 3,  **kwargs)
+    return _combined_model(in_ch = 1, num_classes = 3,  **kwargs)
 
 # 5-fold cross validation
 for iteration in range(1,6):
@@ -159,8 +159,6 @@ for iteration in range(1,6):
     optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
     scheduler = lr_scheduler.StepLR(optimizer, step_size=7, gamma = 0.1)
     model_ft = train_model(model, data_loader, criterion, optimizer, scheduler, iteration, date, num_epochs=30)
-
-
 
 
 

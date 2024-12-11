@@ -123,7 +123,7 @@ transform = transforms.Compose([
 batch_size = 16
 # define model
 def combined_net(**kwargs):
-    return _combined_model(transfer_learning=True, num_classes = 3,  **kwargs)
+    return _combined_model(in_ch = 1, num_classes = 3,  **kwargs)
 
 # 5-fold cross validation
 for fold in range(1,6):

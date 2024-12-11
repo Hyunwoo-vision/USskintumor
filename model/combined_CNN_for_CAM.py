@@ -6,16 +6,10 @@ import torch.nn.functional as F
 from torchvision import datasets, models
 from model.Gridattentionblock import *
 
-##
-def conv3x3(in_planes, out_planes, stride=1, groups=1, dilation=1):
-    "3x3 convolutions"
-    return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,
-                     padding=dilation, groups=groups, bias=False, dilation=dilation)
-
 
 class combined_cnn(nn.Module): # design combined resnet (resnet + attention structure)
 
-    def __init__(self, transfer_learning = True, num_classes=3,
+    def __init__(self, in_ch = 1,, num_classes=3,
                  groups=1, width_per_group=64, aggregation_mode='ft', norm_layer=None): # block은 residual block 종류
 
         super(combined_cnn, self).__init__()

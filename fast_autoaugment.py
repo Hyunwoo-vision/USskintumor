@@ -92,7 +92,7 @@ for k in range(1,6):
         def _objective(sampled):
             global iteration
             def combined_net(**kwargs):
-                return _combined_model(transfer_learning=True, num_classes=3, **kwargs)
+                return _combined_model(in_ch = 1, num_classes=3, **kwargs)
             child_model = combined_net()
             # get original pretrained model with celoss
             model_path = './original_trained_models/celoss/' + str(iteration) + '/' + str(kk) + '.pth'
